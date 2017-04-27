@@ -1,0 +1,45 @@
+img{
+	vertical-align:middle;
+}
+.img-responsive{
+       display:block;
+       height:auto;
+       max-width:100%;
+}
+
+
+.col-xs-6,.col-sm-3{
+	position:relative;
+	min-height:1px;
+	padding-right:15px;
+	padding-left:15px
+}
+.col-xs-6,.col-sm-3{
+	float:left
+}
+
+.col-xs-6,{
+	width:50%
+}
+
+.col-sm-3{
+	width:25%
+}
+
+/*.form-control:-moz-placeholder{color:#999}.form-control::-moz-placeholder{color:#999}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}*/
+.placeholder img {
+    border-radius: 5%;
+    height: 130px;
+    padding: 5px;
+}
+
+.myTooltip h4, .h4 {
+    text-align: -webkit-center;
+    color: firebrick;
+}
+
+.media-object {
+    height: 60px;
+    width: 100px;
+}
+

@@ -1,0 +1,26 @@
+/*
+Styleing for indec chatting application
+*/
+
+html,body{
+	margin:0px;
+	padding:0px;
+}
+
+
+#messages{
+	width:500px;
+	height:300px;
+	margin:10px;
+	padding:5px;
+	border:1px solid #ccc;
+	overflow: auto;
+}
+
+#input{
+	padding:10px;
+	
+}
+#feedback{
+	display:none;
+}

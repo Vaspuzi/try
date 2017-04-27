@@ -1,0 +1,517 @@
+// //session_start();
+
+// if(!empty($_POST['username']) && !empty($_POST['password']) ){
+// 	if(isset($_POST['username']) && isset($_POST['password'])){
+
+// 	Echo 'All the fields have been set.<br/>';
+	
+// 	$name = $_POST['username'];
+// 	$password = $_POST['password'];
+// 	$password_hash = md5($password);
+// 	$conn = mysqli_connect("localhost","root","","medical") or die("There was probably an error in the connection.");
+
+// 	//mysql_select_db("entry") or die("The data base was not found");
+// 	$query = mysqli_query ($conn, "SELECT * FROM users where username = '$name'");
+
+// 	$query1 = mysqli_query ($conn, "SELECT * FROM users where password = '$password_hash'");
+
+// 	$numrows1 = mysqli_num_rows($query);
+// 	$numrows2 = mysqli_num_rows($query1);
+
+// 	if($numrows1 != 0 && $numrows2 != 0){
+
+// 		header("location: diagnosis.php");
+// 	}
+// 	else if($numrows1 <= 0)
+// 	{
+// 		die ("Sorry but the inputted username does not match any in the DB.");
+// 	}
+// 	else if($numrows2 <= 0)
+// 	{
+// 		die ("Sorry but the inputted password is not correct.");
+// 	}
+// 	}
+
+// }
+// else{
+// 	echo "Please fill all the textboxes with the appopriate inputs.";
+// }
+
+
+
+// <?php
+// 	if (isset($_POST['submit'])){
+// 	$surname = $_POST['surname'];
+// 		$other = $_POST['other'];
+// 		$phone = $_POST['phone'];
+// 		$email = $_POST['email'];
+// 		$postal = $_POST['postal'];
+// 		$username = $_POST['un'];
+// 		$year = $_POST['year'];
+// 		$reference = $_POST['ref'];
+// 		$password = $_POST['pass'];
+// 		$gender = $_POST['gender'];
+// 		$profile ='images/'.$_FILES['profile']['name'];
+// 		$password_hash = md5($password);
+	
+// 	mysqli_query($con, "INSERT INTO users (username, password, reference, surname, other, year, gender, pnumber, email, paddress, profile)"
+//           	                           "VALUES ('$username', '$password_hash', '$reference', '$surname', '$other', '$year', '$gender', '$phone', '$email', '$postal', '$profile_path')");
+
+	
+// }
+// 	?>
+
+
+
+
+
+<?php
+$sql1 = "SELECT * FROM users WHERE username='".$username."' ";
+$sel_query1 = mysqli_query($conn, $sql1);
+
+if ($sel_query1 == FALSE) {
+	die(mysqli_error);
+}while ($row = mysqli_fetch_assoc($sel_query1)) {
+	# code...
+}
+l
+
+
+?>
+
+
+
+
+
+<!--script>
+      $(function(){
+      var vec_pal = new Array();
+      <?php
+      for($p = 0;$p < count($arreglo_php); $p++){
+        vec_pal.array_push('<?php echo $arreglo_php[$p]; ?>');
+        <?php } ?>
+        $("#busca").autocomplete({
+          source: vec_pal
+        });
+  });
+    </script -->
+
+
+
+
+
+
+
+    <div class="form-group">
+                          <div class="col-sm-10">
+                            <h3>
+                              <select multiple class="chosen-select" name="symptom" id="symptom">
+                                <option value="">Show All Symptoms</option>
+                                <?php echo fill_symptom($conn); ?>
+                              </select>
+                            </h3>
+                          </div>
+                        </div>
+
+
+
+
+                        onclick="return val();"
+
+
+
+
+
+
+
+
+                        <?php
+
+
+$error = '';
+
+include("loginserver.php");
+
+if (isset($_POST['submit'])) {
+  if (!empty($_POST['username']) && !empty($_POST['pass'])) {
+    if ($_POST['pass'] == $_POST['conpass']) {
+    
+    $surname = $_POST['surname'];
+    $other = $_POST['other'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $postal = $_POST['postal'];
+    $username = $_POST['username'];
+    $year = $_POST['year'];
+    $reference = $_POST['ref'];
+    $password = $_POST['pass'];
+    $conpass = $_POST['conpass'];
+    $gender = $_POST['gender'];
+  $profile ='images/'.$_FILES['profile']['name'];
+    $password_hash = md5($password);
+
+
+
+    if (preg_match("|image|", $_FILES['profile']['type'])) {
+
+
+      if (copy($_FILES['profile']['tmp_name'], $profile)) {
+
+
+        $_SESSION['username'] = $username;
+        $_SESSION['profile'] = $profile;
+      
+
+
+
+
+    $conn = new mysqli('localhost', 'root', '') or die(mysql_error());
+    $db = mysqli_select_db($conn, 'medical') or die("DB error");
+
+    $query = mysqli_query($conn, "SELECT * FROM users WHERE username = '".$username."'");
+    $numrows = mysqli_num_rows($query);
+    if ($numrows == 0) {
+      $sql = "INSERT INTO users (username, password, reference, surname, other, year, gender, pnumber, email, paddress, profile) VALUES ('$username', '$password_hash', '$reference', '$surname', '$other', '$year', '$gender', '$phone', '$email', '$postal', '$profile')";
+      $result = mysqli_query($conn, $sql);
+
+
+      if ($result) {
+        $error = "Your account created successfully";
+      }
+      else {
+        $error = "Failure";
+      }
+    }
+
+            else{
+              $error =  "That username already exists. Please try again";
+            }
+        }
+}
+}
+else{
+  $error = "Passwords do not match";
+}
+  }
+  // else {
+  //  ?>
+  //  <!--script>alert('Required all fields');</script-->
+  //  <?php
+  // }
+}
+
+
+
+?>
+
+
+/[^a-z]/gi;
+
+
+
+
+
+
+
+sign up
+
+
+<?php
+
+
+$error = '';
+
+include("loginserver.php");
+
+if (isset($_POST['submit'])) {
+  if (!empty($_POST['username']) && !empty($_POST['pass'])) {
+    if ($_POST['pass'] == $_POST['conpass']) {
+    
+    $surname = $_POST['surname'];
+    $other = $_POST['other'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $postal = $_POST['postal'];
+    $username = $_POST['username'];
+    $year = $_POST['year'];
+    $reference = $_POST['ref'];
+    $password = $_POST['pass'];
+    $conpass = $_POST['conpass'];
+    $gender = $_POST['gender'];
+  $profile ='images/'.$_FILES['profile']['name'];
+    $password_hash = md5($password);
+
+
+
+    if (preg_match("|image|", $_FILES['profile']['type'])) {
+
+
+      if (copy($_FILES['profile']['tmp_name'], $profile)) {
+
+
+        $_SESSION['username'] = $username;
+        $_SESSION['profile'] = $profile;
+      
+
+
+
+
+    $conn = new mysqli('localhost', 'root', '') or die(mysql_error());
+    $db = mysqli_select_db($conn, 'medical') or die("DB error");
+
+    $query = mysqli_query($conn, "SELECT * FROM users WHERE username = '".$username."'");
+    $numrows = mysqli_num_rows($query);
+    if ($numrows == 0) {
+      $sql = "INSERT INTO users (username, password, reference, surname, other, year, gender, pnumber, email, paddress, profile) VALUES ('$username', '$password_hash', '$reference', '$surname', '$other', '$year', '$gender', '$phone', '$email', '$postal', '$profile')";
+      $result = mysqli_query($conn, $sql);
+
+
+      if ($result) {
+        $error = "Your account created successfully";
+      }
+      else {
+        $error = "Failure";
+      }
+    }
+
+            else{
+              $error =  "That username already exists. Please try again";
+            }
+        }
+}
+}
+else{
+  $error = "Passwords do not match";
+}
+  }
+  // else {
+  //  ?>
+  //  <!--script>alert('Required all fields');</script-->
+  //  <?php
+  // }
+}
+
+
+
+?>
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MH Login</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
+
+      <link rel="stylesheet" href="css/sign.css">
+<script type="text/javascript">
+function lettersOnly(input) {
+    var regex = /[^a-z\s]/gi;
+
+    input.value = input.value.replace(regex, "");
+}
+
+function numbersOnly(input) {
+  var regex =/[^0-9]/g;
+  input.value = input.value.replace(regex, "");
+}
+
+</script>
+
+  
+</head>
+
+<body>
+  <div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <!--input id="tab-3" type="radio" name="tab" class="home"><label for="tab-3" class="tab"><a href="index.php">Home</a></label-->
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <form action="sign.php" method="POST">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="user" name="username" type="text" class="input" required >
+        </div>
+        <div class="group">
+          <label for="reference" class="label">Reference Number</label>
+          <input id="reference" type="text" name="reference" class="input" required onkeyup="numbersOnly(this)">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" name="password" class="input" data-type="password" required>
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div>
+        <div class="group">
+          <input type="submit" name="login" class="button" value="Sign In">
+        </div>
+        <span><?php echo $error; ?></span>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">Forgot Password?</a>
+        </div>
+      </form>
+      </div>
+      <div class="sign-up-htm">
+        <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
+        <div class="row">
+        <h2><i>Personal Information</i></h2><hr>
+        <div class="group">
+          <label for="surname" class="label">Surname</label>
+          <input id="surname" name="surname" type="text" class="input" required onkeyup="lettersOnly(this)">
+        </div>
+        <div class="group">
+          <label for="other" class="label">Other Name(s)</label>
+          <input id="other" name="other" type="text" class="input" required onkeyup="lettersOnly(this)">
+        </div>
+        <div class="form-group">
+                <label for="gender" class="label">Gender</label>
+                    <select class="input"  id="GENDER" name="gender">
+                     <option selected="selected" value="M">Male</option>
+                     <option value="F">Female</option>
+                    </select>
+                    </div>
+                </div>
+
+                <h2><i>Contact Information</i></h2><hr> 
+                <div class="row">   
+                <div class="group">
+          <label for="phone" class="label">Phone Number</label>
+          <input id="phone" name="phone" type="text" class="input" required onkeyup="numbersOnly(this)" >
+        </div>
+        <div class="group">
+          <label for="email" class="label">Email Address</label>
+          <input id="email" name="email" type="text" class="input" required >
+        </div>
+        <div class="group">
+          <label for="postal" class="label">Postal Address</label>
+          <input id="postal" name="postal" type="text" class="input" required >
+        </div>
+      </div>
+                
+                <h2><i>School Information</i></h2><hr>
+                <div class="row">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="user" name="username" type="text" class="input" required >
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Year/Level</label>
+          <input id="pass" name="year" type="text" class="input" required onkeyup="numbersOnly(this)">
+        </div>
+        <div class="group">
+          <label for="ref" class="label">Reference Number</label>
+          <input id="ref" name="ref" type="text" class="input" required onkeyup="numbersOnly(this)" >
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" name="pass" type="password" class="input" data-type="password" required >
+        </div>
+        <div class="group">
+          <label for="conpass" class="label">Confirm Password</label>
+          <input id="conpass" name="conpass" type="password" class="input" data-type="password" required >
+        </div>
+        
+      </div>
+          <div class="profile">
+            <label>Select a Profile Picture: </label>
+            <input type="file" name="profile" accept="image/*" required />
+          </div>
+        <div class="group">
+          <input type="submit" name="submit" class="button" value="Sign Up">
+        </div>
+        <span><?php echo $error; ?></span>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">Already Member?</a>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  
+  
+</body>
+</html>
+
+
+
+
+
+
+SELECT d.disease as disease
+FROM disease d
+    INNER JOIN dsymptom b ON d.disease_id = b.disease_id
+    INNER JOIN symptoms s ON b.symptom_id  = s.symptom_id
+ORDER BY d.disease
+
+
+
+
+
+SELECT d.disease as disease, s.symptom as symptoms
+FROM disease d
+    INNER JOIN dsymptom b ON d.disease_id = b.disease_id
+    INNER JOIN symptoms s ON b.symptom_id  = s.symptom_id
+WHERE s.symptom_id = 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //include ("connection.php");
+// include('session.php'); 
+//include 'core/init.php';
+// $user_query=mysqli_query($con,"select * from member")or die(mysql_error());
+//                   while($row=mysqli_fetch_array($user_query)){
+//                   $id=$row['member_id'];  
+
+
+
+//  $user_query=mysqli_query($conn,"SELECT disease.disease
+// FROM dsymptom 
+//    LEFT JOIN disease ON dsymptom.disease_id = disease.disease_id
+// WHERE dsymptom.symptom_id = '$symptom' AND dsymptom.symptom_id = '$symptom' AND dsymptom.symptom_id = '$symptom'")or die(mysqli_error());
+//               $row=mysqli_fetch_array($user_query);
+//               $_SESSION['disease'] = $row['disease'];
+//               $_SESSION['symptom'] = $row['symptom'];
+
+
+
+
+
+
+
+$resultSet = $mysqli->query
+
+
+
+
+
+
+
+<h4><b>Name:</b> <?php echo $_SESSION['surname']." ".$_SESSION['other']; ?><h4>
+                      <h4><b>Username:</b> <?php echo $_SESSION['username']; ?><h4>
+                      <h4><b>Year:</b> <?php echo $_SESSION['year']; ?><h4>
+                      <h4><b>Reference Number:</b> <?php echo $_SESSION['reference']; ?><h4>
+                      <h4><b>Gender:</b> <?php echo $_SESSION['gender']; ?><h4>
+                      <h4><b>Postal Address:</b> <?php echo $_SESSION['postal']; ?><h4>
+                      <h4><b>Email Address:</b> <?php echo $_SESSION['email']; ?><h4>
+                      <h4><b>Phone Number:</b> <?php echo $_SESSION['phone']; ?><h4>
